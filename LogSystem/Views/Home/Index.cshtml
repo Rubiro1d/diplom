@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Увійти";
+}
+
+<form class="cont indx otp" style="margin-top:37vh">
+    <div>
+        <p class="titl">Вас вітає система управління логістичними перевезеннями компанії "UAD"</p>
+        <p class="titl">Натисніть на кнопку "Отримати Код", яка дасть Вам змогу отримати доступ до сайту</p>
+    </div>
+    <div class="cont" style="width:250px;">
+        <div class="btnn style">
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <i class="part"></i>
+            <span class="zbr" onClick="SendOTP()">Отримати код</span>
+        </div>
+    </div>
+    <div style="margin-top:50px">
+        <p class="titl">Введіть, будь ласка, чотиризначний код в поле нижче</p>
+    </div>
+    <div class="row-no-gutters" style="width:414px; margin-top: 5px">
+        <div class="col-sm-4" style="padding-right:5px;">
+            <input type="text" id="enterOTP" class="form-control" autocomplete="off" placeholder="1234" style="height:45px; text-align:center;font-size:30px;" />
+        </div>
+        <div class="cont col-sm-8">
+            <div class="btnn style">
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <i class="part"></i>
+                <span class="zbr" onClick="verifyOTP()">Перевірити</span>
+            </div>
+        </div>
+    </div>
+</form>
+<link href="~/Content/button.css" rel="stylesheet" />
+@section Scripts{
+    <script>
+
+
+        var SendOTP = function () {
+
+            $.ajax({
+                url: "/Home/SendOTP",
+                type: "post",
+                success: function (data) {
+                    if (data == true) {
+
+                        alert("Помилка");
+                    }
+                    else {
+                        alert("Код був успішно надісланим");
+                        /*window.location = "/Home/EnterOTP"*/;
+                    }
+                }
+
+
+            })
+
+        }
+
+        var verifyOTP = function () {
+            var otp = $("#enterOTP").val();
+
+            $.ajax({
+                url: "/Home/VerifyOTP",
+                data: { otp: otp },
+                type: "post",
+                success: function (data) {
+                    debugger
+                    if (data == 1) {
+                        alert("Вітаємо на сторінці адміністратора");
+                        window.location = "/Home/Admin";
+                    }
+                    else if (data == 2) {
+                            alert("Вітаємо на сторінці логістичної системи");
+                            window.location = "/Home/UsualUser";
+                         }
+                    else {
+                            alert("Невірний код. Спробуйте ще раз або поверніться на головну сторінку");
+                         }
+                }
+            })
+        }
+
+    </script>
+}
+

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LogDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autotypes">
+    <Key>
+      <PropertyRef Name="AutotypeId" />
+    </Key>
+    <Property Name="AutotypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AutotypeName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Drivers">
+    <Key>
+      <PropertyRef Name="DriverId" />
+    </Key>
+    <Property Name="DriverId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverName" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LocationAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="LocationType" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Trips">
+    <Key>
+      <PropertyRef Name="TripId" />
+    </Key>
+    <Property Name="TripId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Start" Type="datetime" />
+    <Property Name="End" Type="datetime" />
+    <Property Name="WeatherType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Visibility" Type="int" />
+    <Property Name="Temperature" Type="int" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="LocationId2" Type="int" />
+    <Property Name="DriverId" Type="int" />
+    <Property Name="AutotypeId" Type="int" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="Time" Type="int" />
+  </EntityType>
+  <Association Name="FK_Trips_[dbo]_[Autotypes]">
+    <End Role="Autotypes" Type="Self.Autotypes" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Autotypes">
+        <PropertyRef Name="AutotypeId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="AutotypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_[dbo]_[Drivers]">
+    <End Role="Drivers" Type="Self.Drivers" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drivers">
+        <PropertyRef Name="DriverId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="DriverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_[dbo]_[Locations]">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_[dbo]_[Locations2]">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="LocationId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Trips_[dbo]_[Orders]">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="Trips">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LogDatabaseModelStoreContainer">
+    <EntitySet Name="Autotypes" EntityType="Self.Autotypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Trips_[dbo]_[Autotypes]" Association="Self.FK_Trips_[dbo]_[Autotypes]">
+      <End Role="Autotypes" EntitySet="Autotypes" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_[dbo]_[Drivers]" Association="Self.FK_Trips_[dbo]_[Drivers]">
+      <End Role="Drivers" EntitySet="Drivers" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_[dbo]_[Locations]" Association="Self.FK_Trips_[dbo]_[Locations]">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_[dbo]_[Locations2]" Association="Self.FK_Trips_[dbo]_[Locations2]">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Trips_[dbo]_[Orders]" Association="Self.FK_Trips_[dbo]_[Orders]">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Trips" EntitySet="Trips" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

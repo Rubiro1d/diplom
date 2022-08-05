@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.5.0-preview2" />
+    <PackageReference Include="Microsoft.ML.Mkl.Components" Version="1.5.0-preview2" />
+    <PackageReference Include="Telegram.Bot" Version="18.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogSystemML.Model\LogSystemML.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectCapability Include="ModelBuilderGenerated" />
+  </ItemGroup>
+</Project>

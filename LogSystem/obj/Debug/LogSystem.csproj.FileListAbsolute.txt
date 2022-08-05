@@ -1,0 +1,380 @@
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\LogSystem.dll.config
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\LogSystem.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\LogSystem.pdb
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\csc.exe
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\csc.exe.config
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\csc.rsp
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\csi.exe
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\csi.exe.config
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\csi.rsp
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.AppContext.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Console.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Globalization.Calendars.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.IO.Compression.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.IO.FileSystem.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Net.Http.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Net.Sockets.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.ValueTuple.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Xml.XPath.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\vbc.exe
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\vbc.exe.config
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\vbc.rsp
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\VBCSCompiler.exe
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\EntityFramework.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\EntityFramework.SqlServer.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Helpers.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Mvc.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Razor.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Webpages.Deployment.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Webpages.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Webpages.Razor.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\EntityFramework.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\EntityFramework.SqlServer.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Razor.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Webpages.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Webpages.Deployment.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Webpages.Razor.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Helpers.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Web.Mvc.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\obj\Debug\LogSystem.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Diploma\LogSystem\LogSystem\obj\Debug\LogSystem.csproj.CopyComplete
+D:\Visual Studio\Diploma\LogSystem\LogSystem\obj\Debug\LogSystem.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\obj\Debug\LogSystem.pdb
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Core.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.CpuMath.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Data.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.DataView.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.KMeansClustering.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.PCA.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.StandardTrainers.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Transforms.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Newtonsoft.Json.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Buffers.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.CodeDom.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Collections.Immutable.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Memory.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Numerics.Vectors.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Threading.Channels.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Threading.Tasks.Extensions.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Core.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.CpuMath.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Data.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.DataView.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.KMeansClustering.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.PCA.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.StandardTrainers.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Transforms.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Newtonsoft.Json.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Buffers.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Collections.Immutable.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Memory.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Numerics.Vectors.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Threading.Channels.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Threading.Tasks.Extensions.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\obj\Debug\LogSystem.csprojAssemblyReference.cache
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\MLModel.zip
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\LogSystemML.Model.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\LogSystemML.Model.pdb
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Threading.Tasks.Dataflow.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\System.Threading.Tasks.Dataflow.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Mkl.Components.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\Microsoft.ML.Mkl.Components.xml
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\lib_lightgbm.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\lightgbm.exe
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\SymSgdNative.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\libiomp5md.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\MklImports.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\MklProxyNative.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\LdaNative.dll
+D:\Visual Studio\Diploma\LogSystem\LogSystem\bin\CpuMathNative.dll
+D:\LogSystem\LogSystem\bin\MLModel.zip
+D:\LogSystem\LogSystem\bin\SymSgdNative.dll
+D:\LogSystem\LogSystem\bin\libiomp5md.dll
+D:\LogSystem\LogSystem\bin\MklImports.dll
+D:\LogSystem\LogSystem\bin\MklProxyNative.dll
+D:\LogSystem\LogSystem\bin\LdaNative.dll
+D:\LogSystem\LogSystem\bin\CpuMathNative.dll
+D:\LogSystem\LogSystem\bin\lib_lightgbm.dll
+D:\LogSystem\LogSystem\bin\lightgbm.exe
+D:\LogSystem\LogSystem\bin\LogSystem.dll.config
+D:\LogSystem\LogSystem\bin\LogSystem.dll
+D:\LogSystem\LogSystem\bin\LogSystem.pdb
+D:\LogSystem\LogSystem\bin\roslyn\csc.exe
+D:\LogSystem\LogSystem\bin\roslyn\csc.exe.config
+D:\LogSystem\LogSystem\bin\roslyn\csc.rsp
+D:\LogSystem\LogSystem\bin\roslyn\csi.exe
+D:\LogSystem\LogSystem\bin\roslyn\csi.exe.config
+D:\LogSystem\LogSystem\bin\roslyn\csi.rsp
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.Managed.Core.targets
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\LogSystem\LogSystem\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.AppContext.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Console.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Globalization.Calendars.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.IO.Compression.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.IO.FileSystem.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Net.Http.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Net.Sockets.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.ValueTuple.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Xml.XmlDocument.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Xml.XPath.dll
+D:\LogSystem\LogSystem\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\LogSystem\LogSystem\bin\roslyn\vbc.exe
+D:\LogSystem\LogSystem\bin\roslyn\vbc.exe.config
+D:\LogSystem\LogSystem\bin\roslyn\vbc.rsp
+D:\LogSystem\LogSystem\bin\roslyn\VBCSCompiler.exe
+D:\LogSystem\LogSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\LogSystem\LogSystem\bin\EntityFramework.dll
+D:\LogSystem\LogSystem\bin\EntityFramework.SqlServer.dll
+D:\LogSystem\LogSystem\bin\LogSystemML.Model.dll
+D:\LogSystem\LogSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Core.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.CpuMath.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Data.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.DataView.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.KMeansClustering.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Mkl.Components.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.PCA.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.StandardTrainers.dll
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Transforms.dll
+D:\LogSystem\LogSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\LogSystem\LogSystem\bin\Newtonsoft.Json.dll
+D:\LogSystem\LogSystem\bin\System.Buffers.dll
+D:\LogSystem\LogSystem\bin\System.CodeDom.dll
+D:\LogSystem\LogSystem\bin\System.Collections.Immutable.dll
+D:\LogSystem\LogSystem\bin\System.Memory.dll
+D:\LogSystem\LogSystem\bin\System.Numerics.Vectors.dll
+D:\LogSystem\LogSystem\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\LogSystem\LogSystem\bin\System.Threading.Channels.dll
+D:\LogSystem\LogSystem\bin\System.Threading.Tasks.Dataflow.dll
+D:\LogSystem\LogSystem\bin\System.Threading.Tasks.Extensions.dll
+D:\LogSystem\LogSystem\bin\System.Web.Helpers.dll
+D:\LogSystem\LogSystem\bin\System.Web.Mvc.dll
+D:\LogSystem\LogSystem\bin\System.Web.Razor.dll
+D:\LogSystem\LogSystem\bin\System.Web.Webpages.Deployment.dll
+D:\LogSystem\LogSystem\bin\System.Web.Webpages.dll
+D:\LogSystem\LogSystem\bin\System.Web.Webpages.Razor.dll
+D:\LogSystem\LogSystem\bin\LogSystemML.Model.pdb
+D:\LogSystem\LogSystem\bin\EntityFramework.xml
+D:\LogSystem\LogSystem\bin\EntityFramework.SqlServer.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Core.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.CpuMath.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Data.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.DataView.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.KMeansClustering.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Mkl.Components.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.PCA.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.StandardTrainers.xml
+D:\LogSystem\LogSystem\bin\Microsoft.ML.Transforms.xml
+D:\LogSystem\LogSystem\bin\Newtonsoft.Json.xml
+D:\LogSystem\LogSystem\bin\System.Buffers.xml
+D:\LogSystem\LogSystem\bin\System.Collections.Immutable.xml
+D:\LogSystem\LogSystem\bin\System.Memory.xml
+D:\LogSystem\LogSystem\bin\System.Numerics.Vectors.xml
+D:\LogSystem\LogSystem\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\LogSystem\LogSystem\bin\System.Threading.Channels.xml
+D:\LogSystem\LogSystem\bin\System.Threading.Tasks.Dataflow.xml
+D:\LogSystem\LogSystem\bin\System.Threading.Tasks.Extensions.xml
+D:\LogSystem\LogSystem\bin\System.Web.Razor.xml
+D:\LogSystem\LogSystem\bin\System.Web.Webpages.xml
+D:\LogSystem\LogSystem\bin\System.Web.Webpages.Deployment.xml
+D:\LogSystem\LogSystem\bin\System.Web.Webpages.Razor.xml
+D:\LogSystem\LogSystem\bin\System.Web.Helpers.xml
+D:\LogSystem\LogSystem\bin\System.Web.Mvc.xml
+D:\LogSystem\LogSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\LogSystem\LogSystem\obj\Debug\LogSystem.csproj.AssemblyReference.cache
+D:\LogSystem\LogSystem\obj\Debug\LogSystem.csproj.CoreCompileInputs.cache
+D:\LogSystem\LogSystem\obj\Debug\LogSystem.csproj.CopyComplete
+D:\LogSystem\LogSystem\obj\Debug\LogSystem.dll
+D:\LogSystem\LogSystem\obj\Debug\LogSystem.pdb
+D:\LogSystem\LogSystem\bin\System.ComponentModel.Annotations.dll
+D:\LogSystem\LogSystem\bin\Telegram.Bot.dll
+D:\LogSystem\LogSystem\bin\Telegram.Bot.pdb
+D:\LogSystem\LogSystem\bin\Telegram.Bot.xml
+D:\Diplom\LogSystem\bin\MLModel.zip
+D:\Diplom\LogSystem\bin\SymSgdNative.dll
+D:\Diplom\LogSystem\bin\libiomp5md.dll
+D:\Diplom\LogSystem\bin\MklImports.dll
+D:\Diplom\LogSystem\bin\MklProxyNative.dll
+D:\Diplom\LogSystem\bin\LdaNative.dll
+D:\Diplom\LogSystem\bin\CpuMathNative.dll
+D:\Diplom\LogSystem\bin\lib_lightgbm.dll
+D:\Diplom\LogSystem\bin\lightgbm.exe
+D:\Diplom\LogSystem\bin\LogSystem.dll.config
+D:\Diplom\LogSystem\bin\LogSystem.dll
+D:\Diplom\LogSystem\bin\LogSystem.pdb
+D:\Diplom\LogSystem\bin\roslyn\csc.exe
+D:\Diplom\LogSystem\bin\roslyn\csc.exe.config
+D:\Diplom\LogSystem\bin\roslyn\csc.rsp
+D:\Diplom\LogSystem\bin\roslyn\csi.exe
+D:\Diplom\LogSystem\bin\roslyn\csi.exe.config
+D:\Diplom\LogSystem\bin\roslyn\csi.rsp
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Diplom\LogSystem\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Diplom\LogSystem\bin\roslyn\System.AppContext.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Console.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Globalization.Calendars.dll
+D:\Diplom\LogSystem\bin\roslyn\System.IO.Compression.dll
+D:\Diplom\LogSystem\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Diplom\LogSystem\bin\roslyn\System.IO.FileSystem.dll
+D:\Diplom\LogSystem\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Net.Http.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Net.Sockets.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Diplom\LogSystem\bin\roslyn\System.ValueTuple.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Xml.XPath.dll
+D:\Diplom\LogSystem\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Diplom\LogSystem\bin\roslyn\vbc.exe
+D:\Diplom\LogSystem\bin\roslyn\vbc.exe.config
+D:\Diplom\LogSystem\bin\roslyn\vbc.rsp
+D:\Diplom\LogSystem\bin\roslyn\VBCSCompiler.exe
+D:\Diplom\LogSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\Diplom\LogSystem\bin\EntityFramework.dll
+D:\Diplom\LogSystem\bin\EntityFramework.SqlServer.dll
+D:\Diplom\LogSystem\bin\LogSystemML.Model.dll
+D:\Diplom\LogSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.Core.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.CpuMath.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.Data.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.DataView.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.KMeansClustering.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.Mkl.Components.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.PCA.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.StandardTrainers.dll
+D:\Diplom\LogSystem\bin\Microsoft.ML.Transforms.dll
+D:\Diplom\LogSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\Diplom\LogSystem\bin\Newtonsoft.Json.dll
+D:\Diplom\LogSystem\bin\System.Buffers.dll
+D:\Diplom\LogSystem\bin\System.CodeDom.dll
+D:\Diplom\LogSystem\bin\System.Collections.Immutable.dll
+D:\Diplom\LogSystem\bin\System.ComponentModel.Annotations.dll
+D:\Diplom\LogSystem\bin\System.Memory.dll
+D:\Diplom\LogSystem\bin\System.Numerics.Vectors.dll
+D:\Diplom\LogSystem\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Diplom\LogSystem\bin\System.Threading.Channels.dll
+D:\Diplom\LogSystem\bin\System.Threading.Tasks.Dataflow.dll
+D:\Diplom\LogSystem\bin\System.Threading.Tasks.Extensions.dll
+D:\Diplom\LogSystem\bin\System.Web.Helpers.dll
+D:\Diplom\LogSystem\bin\System.Web.Mvc.dll
+D:\Diplom\LogSystem\bin\System.Web.Razor.dll
+D:\Diplom\LogSystem\bin\System.Web.Webpages.Deployment.dll
+D:\Diplom\LogSystem\bin\System.Web.Webpages.dll
+D:\Diplom\LogSystem\bin\System.Web.Webpages.Razor.dll
+D:\Diplom\LogSystem\bin\Telegram.Bot.dll
+D:\Diplom\LogSystem\bin\LogSystemML.Model.pdb
+D:\Diplom\LogSystem\bin\EntityFramework.xml
+D:\Diplom\LogSystem\bin\EntityFramework.SqlServer.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.Core.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.CpuMath.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.Data.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.DataView.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.KMeansClustering.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.Mkl.Components.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.PCA.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.StandardTrainers.xml
+D:\Diplom\LogSystem\bin\Microsoft.ML.Transforms.xml
+D:\Diplom\LogSystem\bin\Newtonsoft.Json.xml
+D:\Diplom\LogSystem\bin\System.Buffers.xml
+D:\Diplom\LogSystem\bin\System.Collections.Immutable.xml
+D:\Diplom\LogSystem\bin\System.Memory.xml
+D:\Diplom\LogSystem\bin\System.Numerics.Vectors.xml
+D:\Diplom\LogSystem\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Diplom\LogSystem\bin\System.Threading.Channels.xml
+D:\Diplom\LogSystem\bin\System.Threading.Tasks.Dataflow.xml
+D:\Diplom\LogSystem\bin\System.Threading.Tasks.Extensions.xml
+D:\Diplom\LogSystem\bin\Telegram.Bot.pdb
+D:\Diplom\LogSystem\bin\Telegram.Bot.xml
+D:\Diplom\LogSystem\bin\System.Web.Razor.xml
+D:\Diplom\LogSystem\bin\System.Web.Webpages.xml
+D:\Diplom\LogSystem\bin\System.Web.Webpages.Deployment.xml
+D:\Diplom\LogSystem\bin\System.Web.Webpages.Razor.xml
+D:\Diplom\LogSystem\bin\System.Web.Helpers.xml
+D:\Diplom\LogSystem\bin\System.Web.Mvc.xml
+D:\Diplom\LogSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Diplom\LogSystem\obj\Debug\LogSystem.csproj.AssemblyReference.cache
+D:\Diplom\LogSystem\obj\Debug\LogSystem.csproj.CoreCompileInputs.cache
+D:\Diplom\LogSystem\obj\Debug\LogSystem.csproj.CopyComplete
+D:\Diplom\LogSystem\obj\Debug\LogSystem.dll
+D:\Diplom\LogSystem\obj\Debug\LogSystem.pdb

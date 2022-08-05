@@ -1,0 +1,53 @@
+﻿.con {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    height: auto;
+    background-image: url('images/bg-section3.jpg');
+    background-size: cover;
+}
+
+.logo-1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    
+    font-weight: bold;
+    color: white;
+    display: block;
+    height: auto;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.frame {
+    height: 80px;
+    text-align: center;
+    margin: 1em 0;
+    
+}
+
+.symbcont {
+    margin-top: -2px;
+    height: 80px;
+    width: auto;
+}
+
+.lout {
+    margin-top: 9px;
+    max-height: 80px;
+    height: 80%;
+    width: auto;
+    animation: inin 0.5s ease-out;
+    filter: invert() drop-shadow(0px 0px 5px rgba(255, 255, 0, 1))
+}
+
+@keyframes inin {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}

@@ -1,0 +1,846 @@
+﻿@model LogSystemML.Model.ModelInput
+@{
+    ViewBag.Title = "Адмін";
+    if (Convert.ToInt32(Session["res"]) != 1)
+    {
+        Response.Redirect("/Home/Index");
+    }
+}
+
+<div class="splash">
+    <div class="fade-in">
+        <div class="ice-cont">
+            <div class="ice-cream">
+                <div class="stick"></div>
+            </div>
+        </div>
+        <h1 class="cen">
+            <span class="textani"></span>
+        </h1>
+    </div>
+</div>
+
+@*
+    <div class="row" style="background-color:aqua;">
+        <div class="col-md-12">
+            <form method="post"  id="mmyf">
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="WeatherType" class="control-label">WeatherType ID</label>
+                        <input type="text" id="WeatherType" name="WeatherType" class="form-control" value="0" />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="Visibility" class="control-label">Visibility ID</label>
+                        <input type="number" id="Visibility" name="Visibility" class="form-control" value="0" />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="Temperature" class="control-label">Temperature Locatoin Code:</label>
+                        <input type="number" id="Temperature" name="Temperature" class="form-control" value="0" />
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="LocationId" class="control-label">LocationId ID</label>
+                        <input type="number" id="LocationId" name="LocationId" class="form-control" value="0" />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="LocationId2" class="control-label">LocationId2 ID</label>
+                        <input type="number" id="LocationId2" name="LocationId2" class="form-control" value="0" />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="DriverId" class="control-label">DriverId ID</label>
+                        <input type="number" id="DriverId" name="DriverId" class="form-control" value="0" />
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="AutotypeId" class="control-label">AutotypeId ID</label>
+                        <input type="number" id="AutotypeId" name="AutotypeId" class="form-control" value="1" />
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="OrderId" class="control-label">OrderId ID</label>
+                        <input type="number" id="OrderId" name="OrderId" class="form-control" value="0" />
+                    </div>
+
+
+                </div>
+                <div class="form-group col-md-4 text-left">
+                    <label class="control-label"></label>
+                    <span onclick="document.getElementById('mmyf').submit()" class="btn btn-primary">Stock Prediction</span>
+                </div>
+            </form>
+            <hr />
+        </div>
+
+    </div>
+
+
+*@
+@*<div class="row">
+        <div class="col-md-12">
+            <h2 style="color:#103f62">Here is the Test result for Item : <span style="color:#a50f0f"> @ViewData["Visibility"] </span> for the Warehouse location <span style="color:#a50f0f">@ViewData["OrderId"], @ViewData["Temperature"], @ViewData["DriverId"] </span>  </h2>
+            <h1 style="color:#a50f0f">Final Predicted Stock Quantity is :@ViewBag.Result</h1>
+        </div>
+    </div>
+    <hr />*@
+
+
+
+
+
+<div id="calender"></div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog"  style="margin-top:25vh;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><span id="tripTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                <button id="btnDelete" class="btn btn-default btn-sm pull-right">
+                    <span class="glyphicon glyphicon-remove"></span> Видалити
+                </button>
+                <button id="btnEdit" class="btn btn-default btn-sm pull-right" style="margin-right:5px;">
+                    <span class="glyphicon glyphicon-pencil"></span> Змінити
+                </button>
+                <p id="pDetails"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModalSave" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="margin-top:20vh">
+        <div class="modal-content" style="min-height: 550px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Зберегти рейс</h4>
+            </div>
+            <div class="modal-body">
+                <form class="col-md-12 form-horizontal" name="theForm" id="myf" method="post" data-ajax="true" data-ajax-update="#getTime" data-ajax-mode='replace' data-ajax-url="@Url.Action("Admin","Home")">
+                    <input type="hidden" id="hdTripId" value="0" />
+                    <input type="hidden" id="txtVisibility" value="0" name="Visibility" />
+                    <input type="hidden" id="txtWeatherType" value="0" name="WeatherType" />
+                    <input type="hidden" id="txtTemperature" value="0" name="Temperature" />
+                    <input type="hidden" id="txtDriverId" value="0" name="DriverId" />
+                    <input type="hidden" id="txtAutotypeId" value="0" name="AutotypeId" />
+                    <input type="hidden" id="txtOrderId" value="0" name="OrderId" />
+                    <input type="hidden" id="txtLocationId" value="0" name="LocationId" />
+                    <input type="hidden" id="txtLocationId2" value="0" name="LocationId2" />
+
+                    <div id="getTime"></div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label>Підготовка автомобіля</label>
+                            <div class="input-group date" id="dtp1">
+                                <input type="text" id="txtStart" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6" style="float:right">
+                            <label>Відправлення автомобіля</label>
+                            <div class="input-group date" id="dtp2">
+                                <input type="text" id="txtEnd" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label>Тип початкової локації</label>
+                            @Html.DropDownList("LocType", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6" style="float:right">
+                            <label>Початкова локація</label>
+                            @Html.DropDownList("LocName", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label>Тип кінцевої локації</label>
+                            @Html.DropDownList("LocType2", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6" style="float:right">
+                            <label>Кінцева локація</label>
+                            @Html.DropDownList("LocName2", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label>Водій</label>
+                            @Html.DropDownList("DriName", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                            @*@Html.DropDownListFor(m => m.DriverId, ViewBag.ListOfDriverNames as SelectList, new { @id = "DriName", @class = "form-control", @name = "DriverId" })*@
+                        </div>
+
+                        <div class="form-group col-md-6 col-sm-6" style="float:right">
+                            <label>Тип автомобіля</label>
+                            @Html.DropDownList("AutName", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                            @*@Html.DropDownListFor(n => n.AutotypeId, ViewBag.ListOfAutotypeNames as SelectList, new { @id = "AutName", @class = "form-control", @name = "AutotypeId" })*@
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3"></div>
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label>Номер замовлення</label>
+                            @Html.DropDownList("OrdName", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control" })
+                            @*@Html.DropDownListFor(o => o.OrderId, ViewBag.ListOfOrderNames as SelectList, new { @id = "OrdName", @class = "form-control", @name = "OrderId" })*@
+                        </div>
+                        <div class="col-md-3 col-sm-3"></div>
+                    </div>
+                    <div class="form-group alert alert-success alert-white rounded" id="al2" style="display:none">
+                        <div class="icon"><i class="fa fa-check"></i></div>
+                        <strong>Чудово!</strong> Тепер Ви можете зберегти рейс
+                    </div>
+                    <div class="form-group alert alert-info alert-white rounded" id="al1">
+                        <div class="icon"><i class="fa fa-info-circle"></i></div>
+                        <strong>Увага!</strong> Заповніть усі поля, аби перейти далі
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="cont">
+                            <div class="btnn2 style">
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <button type="submit" form="myf" class="zbr" id="btnSubmit" onClick="getWeather()" style="background:none; border:none">Дані про погоду</button>
+                                @*<span class="zbr" id="btnSubmit" onClick="getWeather()">Дані про погоду<input type="submit" style="font-size: 0; background: transparent; border: none !important;"/></span>*@
+                                @*<input onClick="getWeather()" class="zbr" id="btnSubmit" type="submit" />*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="cont">
+                            <div class="btnn2 style">
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <i class="part"></i>
+                                <span class="zbr" id="btnSave">ЗБЕРЕГТИ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<span type="submit" form="myf" class="zbr" id="btnSubmit" onClick="getWeather()">Дані про погоду</span>
+                <button type="submit" form="myf" onClick="getWeather()">Submit</button>*@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<link href="~/Content/button.css" rel="stylesheet" />
+<link href="~/Content/Alert.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css" rel="stylesheet" media="print" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/splashh.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/uk.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/uk.min.js"></script>
+
+
+
+
+    <script>
+
+        function getWeather() {
+
+            var datename = $('#txtStart').val().trim();
+            datename = datename.substring(0, datename.length - 5);
+            var newdate = datename.split("/").reverse().join("-");
+            //$("#lblvis1").text(newdate);
+            if (newdate.length > 0) {
+                $.ajax({
+                    url: "/home/WeatherDetail?Date=" + newdate,
+                    type: "POST",
+                    success: function (rsltval) {
+                        var data = JSON.parse(rsltval);
+                        console.log(data);
+                        $("#txtWeatherType").val(data.weather_state_name);
+
+                        var the_temp = data.the_temp.toString().split('.').join(',');
+                        $("#txtTemperature").val(the_temp);
+
+                        var visibility = data.visibility.toString().split('.').join(',');
+                        $("#txtVisibility").val(visibility);
+
+
+                        alert("Дані отримано");
+
+                    },
+                    error: function () {
+
+                    }
+                });
+            }
+            else {
+                alert(newdate.length);
+            }
+
+            $("#txtDriverId").val($('#DriName option:selected').val());
+            $("#txtAutotypeId").val($('#AutName option:selected').val());
+            $("#txtOrderId").val($('#OrdName option:selected').val());
+            $("#txtLocationId").val($('#LocName option:selected').val());
+            $("#txtLocationId2").val($('#LocName2 option:selected').val());
+
+            
+        };
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#LocType, #LocType2').select2({
+                language: {
+                    noResults: function (params) {
+                        return "Такого типу локації не знайдено";
+                    }
+                },
+                minimumResultsForSearch: -1,
+                width: '100%'
+            });
+            $('#LocName, #LocName2').select2({
+                language: {
+                    noResults: function (params) {
+                        return "Такої локації не знайдено";
+                    }
+                },
+                width: '100%'
+            });
+            $('#OrdName').select2({
+                language: {
+                    noResults: function (params) {
+                        return "Такого замовлення не знайдено";
+                    }
+                },
+                width: '100%'
+            });
+            $('#DriName').select2({
+                language: {
+                    noResults: function (params) {
+                        return "Такого водія не знайдено";
+                    }
+                },
+                width: '100%'
+            });
+            $('#AutName').select2({
+                language: {
+                    noResults: function (params) {
+                        return "Такого авто не знайдено";
+                    }
+                },
+                width: '100%'
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $.ajax({
+            type: "GET",
+            url: "/home/GetDriver",
+            datatype: "Json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#DriName').append('<option value="' + value.DriverId + '">' + value.DriverName + '</option>');
+                });
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/home/GetAuto",
+            datatype: "Json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#AutName').append('<option value="' + value.AutotypeId + '">' + value.AutotypeName + '</option>');
+                });
+            }
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/home/GetOrder",
+            datatype: "Json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#OrdName').append('<option value="' + value.OrderId + '">' + value.OrderName + '</option>');
+                });
+            }
+        });
+    </script>
+
+
+    <script type="text/javascript">
+
+        $('#LocType').append('<option value=" " selected hidden disabled>Виберіть тип локації</option>');
+        $('#LocType2').append('<option value=" " selected hidden disabled>Виберіть тип локації</option>');
+        $('#LocName').append('<option value="0" selected hidden>Спочатку виберіть тип локації</option>');
+        $('#LocName2').append('<option value="0" selected hidden>Спочатку виберіть тип локації</option>');
+        $('#DriName').append('<option value="0" selected hidden>Виберіть водія</option>');
+        $('#OrdName').append('<option value="0" selected hidden>Виберіть замовлення</option>');
+        $('#AutName').append('<option value="0" selected hidden>Виберіть тип автомобіля</option>');
+
+
+        $.ajax({
+            type: "GET",
+            url: "/home/GetLocType",
+            datatype: "Json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#LocType').append('<option value="' + value.LocationType + '">' + value.LocationType + '</option>');
+                });
+            }
+        });
+
+        $('#LocType').change(function () {
+            $('#LocName').empty();
+            $.ajax({
+                type: "POST",
+                url: "/home/GetLocName",
+                data: { locationType: $('#LocType').val() },
+                datatype: "Json",
+                success: function (data) {
+                    $.each(data, function (index, value) {
+                        $('#LocName').append('<option value="' + value.LocationId + '">' + value.LocationName + '</option>');
+                    });
+                }
+            });
+        });
+
+        $('#LocType').change(function () {
+            $('#LocName').append('<option value=" " selected hidden>Виберіть локацію</option>');
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/home/GetLocType",
+            datatype: "Json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#LocType2').append('<option value="' + value.LocationType + '">' + value.LocationType + '</option>');
+                });
+            }
+        });
+
+        $('#LocType2').change(function () {
+            $('#LocName2').empty();
+            $.ajax({
+                type: "POST",
+                url: "/home/GetLocName",
+                data: { locationType: $('#LocType2').val() },
+                datatype: "Json",
+                success: function (data) {
+                    $.each(data, function (index, value) {
+                        $('#LocName2').append('<option value="' + value.LocationId + '">' + value.LocationName + '</option>');
+                    });
+                }
+            });
+        });
+
+        $('#LocType2').change(function () {
+            $('#LocName2').append('<option value=" " selected hidden>Виберіть локацію</option>');
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            var selectedEvent = null;
+            FetchEventAndRenderCalendar();
+            function FetchEventAndRenderCalendar() {
+                events = [];
+                $.ajax({
+                    type: "GET",
+                    url: "/home/GetTrips",
+                    success: function (data) {
+                        $.each(data, function (i, v) {
+                            events.push({
+                                tripId: v.TripId,
+                                title: v.LocationName2,
+                                start: moment(v.Start),
+                                end: moment(v.End),
+                                weatherType: v.WeatherType,
+                                visibility: v.Visibility,
+                                temperature: v.Temperature,
+
+                                locationName: v.LocationName,
+                                locationName2: v.LocationName2,
+                                locationType: v.LocationType,
+                                locationAddress: v.LocationAddress,
+                                locationAddress2: v.LocationAddress2,
+                                driverName: v.DriverName,
+                                orderName: v.OrderName,
+                                autotypeName: v.AutotypeName,
+
+                                locationId: v.LocationId,
+                                locationId2: v.LocationId2,
+                                driverId: v.DriverId,
+                                autotypeId: v.AutotypeId,
+                                orderId: v.OrderId,
+
+                                time: v.Time
+                            });
+                        })
+
+                        GenerateCalender(events);
+                    },
+                    error: function (error) {
+                        alert('failed');
+                    }
+                })
+            }
+
+            function GenerateCalender(events) {
+                $('#calender').fullCalendar('destroy');
+                $('#calender').fullCalendar({
+                    locale: 'uk',
+                    contentHeight: 650,
+
+                    timeFormat: 'H(:mm)',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek'
+                    },
+                    columnHeaderText: function (mom) {
+                        return mom.format('dddd');
+                    },
+                    eventLimit: true,
+                    eventRender: function (event, element) {
+                        switch (event.locationType) {
+                            case 'Клієнт':
+                                element.css('background-color', 'white');
+                                element.css("font-weight", "bold");
+                                element.css('color', 'black');
+                                element.css("text-transform", "uppercase");
+                                element.css("border-style", "none");
+                                element.css("padding-top", "2px");
+                                break;
+                            case 'Постачальник':
+                                element.css('background-color', 'yellow');
+                                element.css('color', 'black');
+                                element.css("font-weight", "bold");
+                                element.css("text-transform", "uppercase");
+                                element.css("border-style", "none");
+                                element.css("padding-top", "2px");
+                                break;
+                            case 'Склад':
+                                element.css('background-color', 'black');
+                                element.css("font-weight", "bold");
+                                element.css('color', 'yellow');
+                                element.css("text-transform", "uppercase");
+                                element.css("border-style", "none");
+                                element.css("padding-top", "2px");
+                                break;
+                        }
+                    },
+                    events: events,
+                    eventClick: function (calEvent, jsEvent, view) {
+                        selectedEvent = calEvent;
+                        var h = Math.floor(calEvent.time / 3600).toString().padStart(2, '0');
+                        var m = Math.floor(calEvent.time % 3600 / 60).toString().padStart(2, '0');
+                        var s = Math.floor(calEvent.time % 60).toString().padStart(2, '0');
+                        calEvent.time = h + ':' + m + ':' + s;
+                        $('#myModal #tripTitle').text(calEvent.locationName2);
+                        var $description = $('<div />');
+                        $description.append($('<p />').html('<b>Підготовка автомобіля: </b>' + calEvent.start.format("DD-MM-YYYY HH:mm")));
+                        $description.append($('<p/>').html('<b>Відправлення автомобіля: </b>' + calEvent.end.format("DD-MM-YYYY HH:mm")));
+                        $description.append($('<p />').html('<b>Початкова локація: </b>' + calEvent.locationName));
+                        $description.append($('<p />').html('<b>Адреса початкової локації: </b>' + calEvent.locationAddress));
+                        $description.append($('<p />').html('<b>Кінцева локація: </b>' + calEvent.locationName2));
+                        $description.append($('<p />').html('<b>Адреса кінцевої локації: </b>' + calEvent.locationAddress2));
+                        $description.append($('<p />').html("<b>Ім'я водія: </b>" + calEvent.driverName));
+                        $description.append($('<p />').html("<b>Тип автомобіля: </b>" + calEvent.autotypeName));
+                        $description.append($('<p />').html('<b>Замовлення: </b>' + calEvent.orderName));
+                        $description.append($('<p />').html("<b>Прогнозований час на доставку: </b>" + calEvent.time));
+
+                        $('#myModal #pDetails').empty().html($description);
+
+                        $('#myModal').modal();
+                    },
+                    selectable: true,
+                    select: function (start, end) {
+                        selectedEvent = {
+                            tripId: 0,
+
+                            start: start,
+                            end: end,
+                            locationId: '',
+                            locationId2: '',
+                            autotypeId: '',
+                            driverId: '',
+                            orderId: '',
+
+
+                            temperature: '',
+                            visibility: '',
+                            weatherType: '',
+
+                            time: ''
+
+                        };
+
+                        openAddEditForm();
+                        $('#calendar').fullCalendar('unselect');
+                    },
+                    editable: true,
+                    eventDrop: function (event) {
+                        var data = {
+                            TripId: event.tripId,
+
+                            Start: event.start.format('DD/MM/YYYY HH:mm'),
+                            End: event.end.format('DD/MM/YYYY HH:mm'),
+
+                            LocationId: event.locationId,
+                            LocationId2: event.locationId2,
+                            OrderId: event.orderId,
+                            DriverId: event.driverId,
+                            AutotypeId: event.autotypeId,
+
+                            Visibility: event.visibility,
+                            WeatherType: event.weatherType,
+                            Temperature: event.temperature,
+
+                            Time:event.time
+
+                        };
+                        SaveEvent(data);
+                    }
+                })
+            }
+
+            $('#btnEdit').click(function () {
+                //Open modal dialog for edit event
+                openAddEditForm();
+            })
+            $('#btnDelete').click(function () {
+                if (selectedEvent != null && confirm('Are you sure?')) {
+                    $.ajax({
+                        type: "POST",
+                        url: '/home/DeleteEvent',
+                        data: { 'tripId': selectedEvent.tripId },
+                        success: function (data) {
+                            if (data.status) {
+                                //Refresh the calender
+                                FetchEventAndRenderCalendar();
+                                $('#myModal').modal('hide');
+                            }
+                        },
+                        error: function () {
+                            alert('Failed');
+                        }
+                    })
+                }
+            })
+            $('#dtp1,#dtp2').datetimepicker({
+                locale: 'uk',
+                format: 'DD/MM/YYYY HH:mm',
+                stepping: 5
+            });
+
+            if ($('#DriName').val() == 0 || $('#AutName').val() == 0 || $('#OrdName').val() == 0 || $('#LocName').val() == 0 || $('#LocName2').val() == 0) {
+                $('#al1').show();
+                $('#al2').hide();
+            }
+
+            $('#DriName, #AutName, #OrdName, #LocName, #LocName2').on('change', function () {
+                if ($('#DriName').val() != 0 && $('#AutName').val() != 0 && $('#OrdName').val() != 0 && $('#LocName').val() != 0 && $('#LocName2').val() != 0) {
+                    $('#al1').hide();
+                    $('#al2').show();
+                } else {
+                    $('#al1').show();
+                    $('#al2').hide();
+                }
+
+            });
+
+            function openAddEditForm() {
+                if (selectedEvent != null) {
+                    $('#hdTripId').val(selectedEvent.tripId);
+
+                    $('#txtStart').val(selectedEvent.start.format('DD/MM/YYYY 8:00'));
+                    $('#txtEnd').val(selectedEvent.start.format('DD/MM/YYYY 9:00'));
+
+                    $("#LocName option:selected").text(selectedEvent.locationName);
+                    $("#LocName option:selected").val(selectedEvent.locationId);
+                    $("#LocName2 option:selected").text(selectedEvent.locationName2);
+                    $("#LocName2 option:selected").val(selectedEvent.locationId2);
+                    $("#OrdName option:selected").text(selectedEvent.orderName);
+                    $("#OrdName option:selected").val(selectedEvent.orderId);
+                    $("#DriName option:selected").text(selectedEvent.driverName);
+                    $("#DriName option:selected").val(selectedEvent.driverId);
+                    $("#AutName option:selected").text(selectedEvent.autotypeName);
+                    $("#AutName option:selected").val(selectedEvent.autotypeId);
+
+                    $('#txtVisibility').val(selectedEvent.visibility);
+                    $('#txtWeatherType').val(selectedEvent.weatherType);
+                    $('#txtTemperature').val(selectedEvent.temperature);
+
+                    $('#txtTime').val(selectedEvent.time);
+                }
+                $('#myModal').modal('hide');
+                $('#myModalSave').modal();
+            }
+            $('#btnSave').click(function () {
+
+
+
+            
+            @*document.getElementById("myf").submit();*@
+
+
+
+                @*var datename = $('#txtStart').val().trim();
+                datename = datename.substring(0, datename.length - 6);
+                var newdate = datename.split("/").reverse().join("/");
+                //$("#lblvis1").text(newdate);
+                if (newdate.length > 0) {
+                    $.ajax({
+                        url: "WeatherDetail?Date=" + newdate,
+                        type: "POST",
+                        success: function (rsltval) {
+                            var data = JSON.parse(rsltval);
+                            console.log(data);
+                            $("#txtWeatherType").val(data.weather_state_name);
+                            $("#txtVisibility").val(data.visibility);
+
+
+
+                        },
+                        error: function () {
+
+                        }
+                    });
+                }
+                else {
+                    alert(newdate.length);
+                }*@
+
+                //Validation/
+
+                if ($('#DriName option:selected').val().trim() == "") {
+                    alert('Виберіть водія');
+                    return;
+                }
+
+                else if ($('#txtStart').val().trim() == "") {
+                    alert('Виберіть початкову дату');
+                    return;
+                }
+
+
+                else if ($('#LocName option:selected').val().trim() == $('#LocName2 option:selected').val().trim()) {
+                    alert('Ви вибрали однакові початкову та кінцеву локацію');
+                    return;
+                    }
+
+
+
+                else {
+                    var startDate = moment($('#txtStart').val(), "DD/MM/YYYY HH:mm").toDate();
+                    var endDate = moment($('#txtEnd').val(), "DD/MM/YYYY HH:mm").toDate();
+                    if (startDate > endDate) {
+                        alert('Недійсна дата');
+                        return;
+                    }
+                }
+
+                var data = {
+                    TripId: $('#hdTripId').val(),
+
+                    Start: $('#txtStart').val().trim(),
+                    End: $('#txtEnd').val().trim(),
+
+                    LocationId: $('#LocName option:selected').val(),
+                    LocationId2: $('#LocName2 option:selected').val(),
+                    OrderId: $('#OrdName option:selected').val(),
+                    DriverId: $('#DriName option:selected').val(),
+                    AutotypeId: $('#AutName option:selected').val(),
+
+                    Visibility: $('#txtVisibility').val(),
+                    WeatherType: $('#txtWeatherType').val(),
+                    Temperature: $('#txtTemperature').val(),
+
+                    Time: $('#txtTime').val()
+
+                }
+
+
+                SaveEvent(data);
+
+                // call function for submit data to the server
+            })
+
+            function SaveEvent(data) {
+                $.ajax({
+                    type: "POST",
+                    url: '/home/SaveEvent',
+                    data: data,
+                    success: function (data) {
+                        if (data.status) {
+                            //Refresh the calender
+                            FetchEventAndRenderCalendar();
+                            $('#myModalSave').modal('hide');
+                            window.location.reload();
+                        }
+                    },
+                    error: function () {
+                        alert('Failed');
+                    }
+                })
+            }
+        })
+    </script>
+
+
+
+}

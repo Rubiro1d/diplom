@@ -1,0 +1,194 @@
+﻿@model LogSystemML.Model.ModelInput
+
+@{
+    ViewBag.Title = "Користувач";
+    if (Convert.ToInt32(Session["res"]) != 2)
+    {
+        Response.Redirect("/Home/Index");
+    }
+}
+
+<div class="splash">
+    <div class="fade-in">
+        <div class="ice-cont">
+            <div class="ice-cream">
+                <div class="stick"></div>
+            </div>
+        </div>
+        <h1 class="cen">
+            <span class="textani"></span>
+        </h1>
+    </div>
+</div>
+
+<div id="calender"></div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="margin-top:25vh;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><span id="tripTitle"></span></h4>
+            </div>
+            <div class="modal-body">
+                <p id="pDetails"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<link href="~/Content/button.css" rel="stylesheet" />
+<link href="~/Content/Alert.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.print.min.css" rel="stylesheet" media="print" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/splashh.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/uk.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/uk.min.js"></script>
+
+
+  
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            FetchEventAndRenderCalendar();
+            function FetchEventAndRenderCalendar() {
+                events = [];
+                $.ajax({
+                    type: "GET",
+                    url: "/home/GetTrips",
+                    success: function (data) {
+                        $.each(data, function (i, v) {
+                            events.push({
+                                tripId: v.TripId,
+                                title: v.LocationName2,
+                                start: moment(v.Start),
+                                end: moment(v.End),
+                                weatherType: v.WeatherType,
+                                visibility: v.Visibility,
+                                temperature: v.Temperature,
+
+                                locationName: v.LocationName,
+                                locationName2: v.LocationName2,
+                                locationType: v.LocationType,
+                                locationAddress: v.LocationAddress,
+                                locationAddress2: v.LocationAddress2,
+                                driverName: v.DriverName,
+                                orderName: v.OrderName,
+                                autotypeName: v.AutotypeName,
+
+                                locationId: v.LocationId,
+                                locationId2: v.LocationId2,
+                                driverId: v.DriverId,
+                                autotypeId: v.AutotypeId,
+                                orderId: v.OrderId,
+
+                                time: v.Time
+                            });
+                        })
+
+                        GenerateCalender(events);
+                    },
+                    error: function (error) {
+                        alert('failed');
+                    }
+                })
+            }
+
+            function GenerateCalender(events) {
+                $('#calender').fullCalendar('destroy');
+                $('#calender').fullCalendar({
+                    locale: 'uk',
+                    contentHeight: 650,
+
+                    timeFormat: 'H(:mm)',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek'
+                    },
+                    columnHeaderText: function (mom) {
+                        return mom.format('dddd');
+                    },
+                    eventLimit: true,
+                    eventRender: function (event, element) {
+                        switch (event.locationType) {
+                            case 'Клієнт':
+                                element.css('background-color', 'white');
+                                element.css("font-weight", "bold");
+                                element.css('color', 'black');
+                                element.css("text-transform", "uppercase");
+                                element.css("border-style", "none");
+                                element.css("padding-top", "2px");
+                                break;
+                            case 'Постачальник':
+                                element.css('background-color', 'yellow');
+                                element.css('color', 'black');
+                                element.css("font-weight", "bold");
+                                element.css("text-transform", "uppercase");
+                                element.css("border-style", "none");
+                                element.css("padding-top", "2px");
+                                break;
+                            case 'Склад':
+                                element.css('background-color', 'black');
+                                element.css("font-weight", "bold");
+                                element.css('color', 'yellow');
+                                element.css("text-transform", "uppercase");
+                                element.css("border-style", "none");
+                                element.css("padding-top", "2px");
+                                break;
+                        }
+                    },
+                    events: events,
+                    eventClick: function (calEvent, jsEvent, view) {
+                        selectedEvent = calEvent;
+                        var h = Math.floor(calEvent.time / 3600).toString().padStart(2, '0');
+                        var m = Math.floor(calEvent.time % 3600 / 60).toString().padStart(2, '0');
+                        var s = Math.floor(calEvent.time % 60).toString().padStart(2, '0');
+                        calEvent.time = h + ':' + m + ':' + s;
+                        $('#myModal #tripTitle').text(calEvent.locationName2);
+                        var $description = $('<div />');
+                        $description.append($('<p />').html('<b>Підготовка автомобіля: </b>' + calEvent.start.format("DD-MM-YYYY HH:mm")));
+                        $description.append($('<p/>').html('<b>Відправлення автомобіля: </b>' + calEvent.end.format("DD-MM-YYYY HH:mm")));
+                        $description.append($('<p />').html('<b>Початкова локація: </b>' + calEvent.locationName));
+                        $description.append($('<p />').html('<b>Адреса початкової локації: </b>' + calEvent.locationAddress));
+                        $description.append($('<p />').html('<b>Кінцева локація: </b>' + calEvent.locationName2));
+                        $description.append($('<p />').html('<b>Адреса кінцевої локації: </b>' + calEvent.locationAddress2));
+                        $description.append($('<p />').html("<b>Ім'я водія: </b>" + calEvent.driverName));
+                        $description.append($('<p />').html("<b>Тип автомобіля: </b>" + calEvent.autotypeName));
+                        $description.append($('<p />').html('<b>Замовлення: </b>' + calEvent.orderName));
+                        $description.append($('<p />').html("<b>Прогнозований час на доставку: </b>" + calEvent.time));
+
+                        $('#myModal #pDetails').empty().html($description);
+
+                        $('#myModal').modal();
+                    }
+                })
+            }
+        })
+    </script>
+
+
+
+}
+

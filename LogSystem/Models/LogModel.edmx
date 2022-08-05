@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LogDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autotypes">
+          <Key>
+            <PropertyRef Name="AutotypeId" />
+          </Key>
+          <Property Name="AutotypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AutotypeName" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="DriverId" />
+          </Key>
+          <Property Name="DriverId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DriverName" Type="nvarchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="Locations">
+          <Key>
+            <PropertyRef Name="LocationId" />
+          </Key>
+          <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LocationAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationType" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderName" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Trips">
+          <Key>
+            <PropertyRef Name="TripId" />
+          </Key>
+          <Property Name="TripId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="datetime" />
+          <Property Name="End" Type="datetime" />
+          <Property Name="WeatherType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Visibility" Type="int" />
+          <Property Name="Temperature" Type="int" />
+          <Property Name="LocationId" Type="int" />
+          <Property Name="LocationId2" Type="int" />
+          <Property Name="DriverId" Type="int" />
+          <Property Name="AutotypeId" Type="int" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="Time" Type="int" />
+        </EntityType>
+        <Association Name="FK_Trips_[dbo]_[Autotypes]">
+          <End Role="Autotypes" Type="Self.Autotypes" Multiplicity="0..1" />
+          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autotypes">
+              <PropertyRef Name="AutotypeId" />
+            </Principal>
+            <Dependent Role="Trips">
+              <PropertyRef Name="AutotypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips_[dbo]_[Drivers]">
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="0..1" />
+          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivers">
+              <PropertyRef Name="DriverId" />
+            </Principal>
+            <Dependent Role="Trips">
+              <PropertyRef Name="DriverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips_[dbo]_[Locations]">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="LocationId" />
+            </Principal>
+            <Dependent Role="Trips">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips_[dbo]_[Locations2]">
+          <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Locations">
+              <PropertyRef Name="LocationId" />
+            </Principal>
+            <Dependent Role="Trips">
+              <PropertyRef Name="LocationId2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips_[dbo]_[Orders]">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Trips" Type="Self.Trips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Trips">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LogDatabaseModelStoreContainer">
+          <EntitySet Name="Autotypes" EntityType="Self.Autotypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trips" EntityType="Self.Trips" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Trips_[dbo]_[Autotypes]" Association="Self.FK_Trips_[dbo]_[Autotypes]">
+            <End Role="Autotypes" EntitySet="Autotypes" />
+            <End Role="Trips" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_[dbo]_[Drivers]" Association="Self.FK_Trips_[dbo]_[Drivers]">
+            <End Role="Drivers" EntitySet="Drivers" />
+            <End Role="Trips" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_[dbo]_[Locations]" Association="Self.FK_Trips_[dbo]_[Locations]">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Trips" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_[dbo]_[Locations2]" Association="Self.FK_Trips_[dbo]_[Locations2]">
+            <End Role="Locations" EntitySet="Locations" />
+            <End Role="Trips" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips_[dbo]_[Orders]" Association="Self.FK_Trips_[dbo]_[Orders]">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Trips" EntitySet="Trips" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LogDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LogDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autotypes" EntityType="LogDatabaseModel.Autotype" />
+          <EntitySet Name="Drivers" EntityType="LogDatabaseModel.Driver" />
+          <EntitySet Name="Locations" EntityType="LogDatabaseModel.Location" />
+          <EntitySet Name="Orders" EntityType="LogDatabaseModel.Order" />
+          <EntitySet Name="Trips" EntityType="LogDatabaseModel.Trip" />
+          <AssociationSet Name="FK_Trips__dbo___Autotypes_" Association="LogDatabaseModel.FK_Trips__dbo___Autotypes_">
+            <End Role="Autotype" EntitySet="Autotypes" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips__dbo___Drivers_" Association="LogDatabaseModel.FK_Trips__dbo___Drivers_">
+            <End Role="Driver" EntitySet="Drivers" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips__dbo___Locations_" Association="LogDatabaseModel.FK_Trips__dbo___Locations_">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips__dbo___Locations2_" Association="LogDatabaseModel.FK_Trips__dbo___Locations2_">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trips__dbo___Orders_" Association="LogDatabaseModel.FK_Trips__dbo___Orders_">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Trip" EntitySet="Trips" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Autotype">
+          <Key>
+            <PropertyRef Name="AutotypeId" />
+          </Key>
+          <Property Name="AutotypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AutotypeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Trips" Relationship="LogDatabaseModel.FK_Trips__dbo___Autotypes_" FromRole="Autotype" ToRole="Trip" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="DriverId" />
+          </Key>
+          <Property Name="DriverId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DriverName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Trips" Relationship="LogDatabaseModel.FK_Trips__dbo___Drivers_" FromRole="Driver" ToRole="Trip" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="LocationId" />
+          </Key>
+          <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocationName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LocationAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationType" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Trips" Relationship="LogDatabaseModel.FK_Trips__dbo___Locations_" FromRole="Location" ToRole="Trip" />
+          <NavigationProperty Name="Trips1" Relationship="LogDatabaseModel.FK_Trips__dbo___Locations2_" FromRole="Location" ToRole="Trip" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Trips" Relationship="LogDatabaseModel.FK_Trips__dbo___Orders_" FromRole="Order" ToRole="Trip" />
+        </EntityType>
+        <EntityType Name="Trip">
+          <Key>
+            <PropertyRef Name="TripId" />
+          </Key>
+          <Property Name="TripId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="DateTime" Precision="3" />
+          <Property Name="End" Type="DateTime" Precision="3" />
+          <Property Name="WeatherType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Visibility" Type="Int32" />
+          <Property Name="Temperature" Type="Int32" />
+          <Property Name="LocationId" Type="Int32" />
+          <Property Name="LocationId2" Type="Int32" />
+          <Property Name="DriverId" Type="Int32" />
+          <Property Name="AutotypeId" Type="Int32" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="Time" Type="Int32" />
+          <NavigationProperty Name="Autotype" Relationship="LogDatabaseModel.FK_Trips__dbo___Autotypes_" FromRole="Trip" ToRole="Autotype" />
+          <NavigationProperty Name="Driver" Relationship="LogDatabaseModel.FK_Trips__dbo___Drivers_" FromRole="Trip" ToRole="Driver" />
+          <NavigationProperty Name="Location" Relationship="LogDatabaseModel.FK_Trips__dbo___Locations_" FromRole="Trip" ToRole="Location" />
+          <NavigationProperty Name="Location1" Relationship="LogDatabaseModel.FK_Trips__dbo___Locations2_" FromRole="Trip" ToRole="Location" />
+          <NavigationProperty Name="Order" Relationship="LogDatabaseModel.FK_Trips__dbo___Orders_" FromRole="Trip" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK_Trips__dbo___Autotypes_">
+          <End Type="LogDatabaseModel.Autotype" Role="Autotype" Multiplicity="0..1" />
+          <End Type="LogDatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Autotype">
+              <PropertyRef Name="AutotypeId" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="AutotypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips__dbo___Drivers_">
+          <End Type="LogDatabaseModel.Driver" Role="Driver" Multiplicity="0..1" />
+          <End Type="LogDatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="DriverId" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="DriverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips__dbo___Locations_">
+          <End Type="LogDatabaseModel.Location" Role="Location" Multiplicity="0..1" />
+          <End Type="LogDatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="LocationId" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips__dbo___Locations2_">
+          <End Type="LogDatabaseModel.Location" Role="Location" Multiplicity="0..1" />
+          <End Type="LogDatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="LocationId" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="LocationId2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trips__dbo___Orders_">
+          <End Type="LogDatabaseModel.Order" Role="Order" Multiplicity="0..1" />
+          <End Type="LogDatabaseModel.Trip" Role="Trip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Trip">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LogDatabaseModelStoreContainer" CdmEntityContainer="LogDatabaseEntities">
+          <EntitySetMapping Name="Autotypes">
+            <EntityTypeMapping TypeName="LogDatabaseModel.Autotype">
+              <MappingFragment StoreEntitySet="Autotypes">
+                <ScalarProperty Name="AutotypeName" ColumnName="AutotypeName" />
+                <ScalarProperty Name="AutotypeId" ColumnName="AutotypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="LogDatabaseModel.Driver">
+              <MappingFragment StoreEntitySet="Drivers">
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="LogDatabaseModel.Location">
+              <MappingFragment StoreEntitySet="Locations">
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="LocationAddress" ColumnName="LocationAddress" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="LogDatabaseModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trips">
+            <EntityTypeMapping TypeName="LogDatabaseModel.Trip">
+              <MappingFragment StoreEntitySet="Trips">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="AutotypeId" ColumnName="AutotypeId" />
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+                <ScalarProperty Name="LocationId2" ColumnName="LocationId2" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="Visibility" ColumnName="Visibility" />
+                <ScalarProperty Name="WeatherType" ColumnName="WeatherType" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="TripId" ColumnName="TripId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
