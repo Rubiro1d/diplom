@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a/4WyljmRHfHe8u7R1CAyRiBdFpJ1yqCCM0M5JKLqhPkwKD9OFBrruQPgJDtegHHL2+JBk5yhbaSY6aB7Lc63g==",
+  "dgSpecHash": "Z2emXBlijNtYexqEmQNT9a4XoTfRrHuZ7mPLs54Z8oxqfbyqJ/T75o9CHg0OfCyAw0IHhiGR3ZQwYkWhT/lvvA==",
   "success": true,
-  "projectFilePath": "D:\\Diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj",
+  "projectFilePath": "D:\\Documents\\diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vova_\\.nuget\\packages\\microsoft.ml\\1.5.0-preview2\\microsoft.ml.1.5.0-preview2.nupkg.sha512",
     "C:\\Users\\vova_\\.nuget\\packages\\microsoft.ml.cpumath\\1.5.0-preview2\\microsoft.ml.cpumath.1.5.0-preview2.nupkg.sha512",

@@ -30,3 +30,14 @@ D:\Diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.AssemblyI
 D:\Diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.csproj.CoreCompileInputs.cache
 D:\Diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.dll
 D:\Diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.pdb
+D:\Documents\diplom\LogSystemML.Model\bin\Debug\netstandard2.0\MLModel.zip
+D:\Documents\diplom\LogSystemML.Model\bin\Debug\netstandard2.0\LogSystemML.Model.deps.json
+D:\Documents\diplom\LogSystemML.Model\bin\Debug\netstandard2.0\LogSystemML.Model.dll
+D:\Documents\diplom\LogSystemML.Model\bin\Debug\netstandard2.0\LogSystemML.Model.pdb
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.csproj.AssemblyReference.cache
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.AssemblyInfoInputs.cache
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.AssemblyInfo.cs
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.csproj.CoreCompileInputs.cache
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.dll
+D:\Documents\diplom\LogSystemML.Model\obj\Debug\netstandard2.0\LogSystemML.Model.pdb

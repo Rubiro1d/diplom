@@ -10,6 +10,8 @@ using LogSystemML.Model;
 using System.Text;
 using System.IO;
 using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace LogSystem.Controllers
 {
@@ -20,15 +22,15 @@ namespace LogSystem.Controllers
         [HttpGet]
         public ActionResult Admin()
         {
-           /*var ListOfDriverNames = dc.Drivers.ToList();
-           ViewBag.ListOfDriverNames = new SelectList(ListOfDriverNames, "DriverId", "DriverName");
+            /*var ListOfDriverNames = dc.Drivers.ToList();
+            ViewBag.ListOfDriverNames = new SelectList(ListOfDriverNames, "DriverId", "DriverName");
 
-            var ListOfAutotypeNames = dc.Autotypes.ToList();
-            ViewBag.ListOfAutotypeNames = new SelectList(ListOfAutotypeNames, "AutotypeId", "AutotypeName");
+             var ListOfAutotypeNames = dc.Autotypes.ToList();
+             ViewBag.ListOfAutotypeNames = new SelectList(ListOfAutotypeNames, "AutotypeId", "AutotypeName");
 
-            var ListOfOrderNames = dc.Orders.ToList();
-            ViewBag.ListOfOrderNames = new SelectList(ListOfOrderNames, "OrderId", "OrderName");*//*
-*/
+             var ListOfOrderNames = dc.Orders.ToList();
+             ViewBag.ListOfOrderNames = new SelectList(ListOfOrderNames, "OrderId", "OrderName");*//*
+ */
             return View();
         }
 
@@ -40,7 +42,7 @@ namespace LogSystem.Controllers
             var stockPredictions = ConsumeModel.Predict(input);
             ViewBag.Result = Convert.ToInt32(stockPredictions.Score);
             /*ViewBag.Result = stockPredictions.Score;*/
-            
+
             ViewData["WeatherType"] = input.WeatherType;
             ViewData["Visibility"] = input.Visibility;
             ViewData["Temperature"] = input.Temperature;
@@ -65,7 +67,7 @@ namespace LogSystem.Controllers
                 WeatherType = x.WeatherType,
                 Visibility = x.Visibility,
                 Temperature = x.Temperature,
-                
+
                 LocationName = x.Location.LocationName,
                 LocationName2 = x.Location1.LocationName,
                 LocationType = x.Location.LocationType,
@@ -74,7 +76,7 @@ namespace LogSystem.Controllers
                 DriverName = x.Driver.DriverName,
                 OrderName = x.Order.OrderName,
                 AutotypeName = x.Autotype.AutotypeName,
-                
+
                 LocationId = x.LocationId,
                 LocationId2 = x.LocationId2,
                 DriverId = x.DriverId,
@@ -98,7 +100,7 @@ namespace LogSystem.Controllers
                     var v = dc.Trips.Where(a => a.TripId == e.TripId).FirstOrDefault();
                     if (v != null)
                     {
-                        
+
                         v.Start = e.Start;
                         v.End = e.End;
                         v.WeatherType = e.WeatherType;
@@ -114,7 +116,7 @@ namespace LogSystem.Controllers
                 }
                 else
                 {
-                    
+
                     dc.Trips.Add(e);
                 }
                 dc.SaveChanges();
@@ -122,7 +124,7 @@ namespace LogSystem.Controllers
             }
             return new JsonResult { Data = new { status = status } };
         }
-        
+
         [HttpPost]
         public JsonResult DeleteEvent(int tripId)
         {
@@ -177,32 +179,46 @@ namespace LogSystem.Controllers
             return Json(locationList, JsonRequestBehavior.AllowGet);
         }
 
+        private readonly string _token = "DBSEKFHLSQFZZS2YKLFD8LSJW";
+        private string SetupUri(string date, string token) => $"VisualCrossingWebServices/rest/services/timeline/Kyiv/{date}/{date}?unitGroup=metric&include=days&key={token}&contentType=json";
+
         [HttpPost]
-        public String WeatherDetail(string date)
+        public async Task<ActionResult> WeatherDetail(string date)
         {
-            string url = string.Format("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Kyiv/{0}/{0}?unitGroup=metric&include=days&key=DBSEKFHLSQFZZS2YKLFD8LSJW&contentType=json", date);
-
-            using (HttpClient client = new WebClient())
+            using (var client = new HttpClient())
             {
-                string json = client.DownloadString(url);
+                client.BaseAddress = new Uri("https://weather.visualcrossing.com/");
 
-                List<RootObject> weatherInfo = (new JavaScriptSerializer()).Deserialize<List<RootObject>>(json);
+                try
+                {
+                    var result = await client.GetAsync(SetupUri(date, _token));
 
+                    if (result.StatusCode != HttpStatusCode.OK)
+                        return HttpNotFound();
 
-                ResultViewModel rslt = new ResultViewModel();
+                    var content = await result.Content.ReadAsStringAsync();
 
-                rslt.temp = Convert.ToInt32(weatherInfo[0].temp);
-                rslt.visibility = Convert.ToInt32(weatherInfo[7].visibility);
-                rslt.conditions = weatherInfo[7].conditions;
-                
-                //Converting OBJECT to JSON String 
-                var jsonstring = new JavaScriptSerializer().Serialize(rslt);
+                    var weatherInfo = (new JavaScriptSerializer()).Deserialize<WeatherResponseModel>(content);
 
-                //Return JSON string.
-                return jsonstring;
+                    var rslt = new ResultViewModel();
+
+                    var days = weatherInfo.Days.Select(x => x);
+
+                    rslt.temp = Convert.ToInt32(days.First().temp);
+                    rslt.visibility = Convert.ToInt32(days.First().visibility);
+                    rslt.conditions = days.First().conditions;
+
+                    var jsonstring = new JavaScriptSerializer().Serialize(rslt);
+
+                    return Json(jsonstring);
+                }
+                catch (Exception)
+                {
+                    return HttpNotFound();
+                }
             }
         }
-        
+
         public ActionResult Index()
         {
 
@@ -269,7 +285,7 @@ namespace LogSystem.Controllers
         [HttpPost]
         public JsonResult VerifyOTP(string otp)
         {
-            int res;          
+            int res;
 
             if (otp == "0451")
             {

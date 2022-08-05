@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj": {}
+    "D:\\Documents\\diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj": {}
   },
   "projects": {
-    "D:\\Diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj": {
+    "D:\\Documents\\diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj",
+        "projectUniqueName": "D:\\Documents\\diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj",
         "projectName": "LogSystemML.ConsoleApp",
-        "projectPath": "D:\\Diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj",
+        "projectPath": "D:\\Documents\\diplom\\LogSystemML.ConsoleApp\\LogSystemML.ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\vova_\\.nuget\\packages\\",
-        "outputPath": "D:\\Diplom\\LogSystemML.ConsoleApp\\obj\\",
+        "outputPath": "D:\\Documents\\diplom\\LogSystemML.ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vova_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj": {
-                "projectPath": "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj"
+              "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj": {
+                "projectPath": "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj": {
+    "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
+        "projectUniqueName": "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
         "projectName": "LogSystemML.Model",
-        "projectPath": "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
+        "projectPath": "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
         "packagesPath": "C:\\Users\\vova_\\.nuget\\packages\\",
-        "outputPath": "D:\\Diplom\\LogSystemML.Model\\obj\\",
+        "outputPath": "D:\\Documents\\diplom\\LogSystemML.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vova_\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1630,11 +1630,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
+      "projectUniqueName": "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
       "projectName": "LogSystemML.Model",
-      "projectPath": "D:\\Diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
+      "projectPath": "D:\\Documents\\diplom\\LogSystemML.Model\\LogSystemML.Model.csproj",
       "packagesPath": "C:\\Users\\vova_\\.nuget\\packages\\",
-      "outputPath": "D:\\Diplom\\LogSystemML.Model\\obj\\",
+      "outputPath": "D:\\Documents\\diplom\\LogSystemML.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vova_\\AppData\\Roaming\\NuGet\\NuGet.Config",

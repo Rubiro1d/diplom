@@ -304,10 +304,10 @@
                     success: function (rsltval) {
                         var data = JSON.parse(rsltval);
                         console.log(data);
-                        $("#txtWeatherType").val(data.weather_state_name);
+                        $("#txtWeatherType").val(data.conditions);
 
-                        var the_temp = data.the_temp.toString().split('.').join(',');
-                        $("#txtTemperature").val(the_temp);
+                        var temp = data.temp.toString().split('.').join(',');
+                        $("#txtTemperature").val(temp);
 
                         var visibility = data.visibility.toString().split('.').join(',');
                         $("#txtVisibility").val(visibility);

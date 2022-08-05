@@ -2,6 +2,7 @@
 
 using Microsoft.ML.Data;
 using System;
+using System.Collections.Generic;
 
 namespace LogSystemML.Model
 {
@@ -100,4 +101,10 @@ namespace LogSystemML.Model
         public Nullable<float> temp { get; set; }
         public string conditions { get; set; }
     }
+
+    public class WeatherResponseModel 
+    { 
+        public IEnumerable<RootObject> Days { get; set; }
+    }
+
 }
